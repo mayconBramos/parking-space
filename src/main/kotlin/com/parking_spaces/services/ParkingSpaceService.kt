@@ -20,5 +20,10 @@ class ParkingSpaceService (
             return parkingSpaceRepository.findAll()
         }
 
+    fun findById(id: Int): ParkingSpaceModel {
+        return parkingSpaceRepository.findById(id).orElseThrow()
+
+    }
+
 }
 

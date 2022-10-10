@@ -27,5 +27,10 @@ import javax.validation.Valid
     fun getAll(): List<ParkingSpaceModel> {
         return parkingSpaceService.getAll()
     }
+
+    @GetMapping("/{id}")
+    fun getSpace(@PathVariable id: Int): ParkingSpaceModel {
+        return parkingSpaceService.findById(id)
+    }
 }
 
