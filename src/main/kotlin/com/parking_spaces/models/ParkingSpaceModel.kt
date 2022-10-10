@@ -41,4 +41,6 @@ data  class ParkingSpaceModel (
     @Column(nullable = false, length = 30)
     var bloco:String
 
-)
+) {
+
+}

@@ -3,6 +3,7 @@ package com.parking_spaces.controllers
 import com.parking_spaces.dto.PostParkingSpaceRequest
 import com.parking_spaces.models.ParkingSpaceModel
 import com.parking_spaces.extension.toParkingSpaceModel
+import com.parking_spaces.repositories.ParkingSpaceRepository
 import com.parking_spaces.services.ParkingSpaceService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -31,6 +32,17 @@ import javax.validation.Valid
     @GetMapping("/{id}")
     fun getSpace(@PathVariable id: Int): ParkingSpaceModel {
         return parkingSpaceService.findById(id)
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun delete(@PathVariable id: Int) {
+        val findById = parkingSpaceService.findById(id)
+
+        parkingSpaceService.delete(findById)
+
+
+
     }
 }
 
