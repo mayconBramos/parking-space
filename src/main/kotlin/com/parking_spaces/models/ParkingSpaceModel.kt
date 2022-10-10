@@ -10,7 +10,7 @@ data class ParkingSpaceModel (
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Int,
+    var id: Int? = null,
 
     @Column (nullable = false, unique = true, length = 10)
     var numeroVaga: String,
@@ -28,7 +28,7 @@ data class ParkingSpaceModel (
     var corCarro: String,
 
     @Column(nullable = false)
-    var dataRegistro: LocalDateTime,
+    var dataRegistro: LocalDateTime? = null,
 
 
     @Column(nullable = false, length = 130)
@@ -41,4 +41,6 @@ data class ParkingSpaceModel (
     @Column(nullable = false, length = 30)
     var bloco:String
 
-)
+) {
+    companion object
+}
