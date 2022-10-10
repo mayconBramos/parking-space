@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity(name= "parking-space")
 @Table(name = "TB_PARKING_SPACE") // QUALQUER ERRO OLHAR NO MINUTO 41 DO VIDEO SPRING BOOT
-data class ParkingSpaceModel (
+data  class ParkingSpaceModel (
 
 
     @Id
@@ -41,6 +41,4 @@ data class ParkingSpaceModel (
     @Column(nullable = false, length = 30)
     var bloco:String
 
-) {
-    companion object
-}
+)

@@ -4,7 +4,7 @@ import com.parking_spaces.dto.PostParkingSpaceRequest
 import com.parking_spaces.models.ParkingSpaceModel
 import java.time.LocalDateTime
 
-fun PostParkingSpaceRequest.toParkingSpaceModel():ParkingSpaceModel{
+fun PostParkingSpaceRequest.toParkingSpaceModel(): ParkingSpaceModel {
 
     return ParkingSpaceModel(
 

@@ -15,5 +15,10 @@ class ParkingSpaceService (
         return parkingSpaceRepository.save(cadastroVaga)
     }
 
+    fun getAll(): List<ParkingSpaceModel> {
+
+            return parkingSpaceRepository.findAll()
+        }
+
 }
 
