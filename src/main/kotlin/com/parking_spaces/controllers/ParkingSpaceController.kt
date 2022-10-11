@@ -1,11 +1,11 @@
 package com.parking_spaces.controllers
 
-import com.parking_spaces.dto.PostParkingSpaceRequest
-import com.parking_spaces.dto.PutParkingSpaceRequest
+import com.parking_spaces.controllers.request.PostParkingSpaceRequest
+import com.parking_spaces.controllers.request.PutParkingSpaceRequest
+import com.parking_spaces.controllers.response.ParkingSpaceResponse
 import com.parking_spaces.extension.toCustomerModel
-import com.parking_spaces.models.ParkingSpaceModel
 import com.parking_spaces.extension.toParkingSpaceModel
-import com.parking_spaces.repositories.ParkingSpaceRepository
+import com.parking_spaces.extension.toResponse
 import com.parking_spaces.services.ParkingSpaceService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -27,13 +27,13 @@ import javax.validation.Valid
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    fun getAll(): List<ParkingSpaceModel> {
-        return parkingSpaceService.getAll()
+    fun getAll(): List<ParkingSpaceResponse> {
+        return parkingSpaceService.getAll().map { it.toResponse() }
     }
 
     @GetMapping("/{id}")
-    fun getSpace(@PathVariable id: Int): ParkingSpaceModel {
-        return parkingSpaceService.findById(id)
+    fun getSpace(@PathVariable id: Int): ParkingSpaceResponse {
+        return parkingSpaceService.findById(id).toResponse()
     }
 
     @PutMapping("/{id}")

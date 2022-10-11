@@ -1,4 +1,4 @@
-package com.parking_spaces.dto
+package com.parking_spaces.controllers.request
 
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size

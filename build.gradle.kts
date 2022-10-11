@@ -24,10 +24,15 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-	//implementation("org.flywaydb:flyway-core:9.4.0")
+
+//	implementation("org.flywaydb:flyway-core")
+	//implementation("org.flywaydb:flyway-mysql")
+
+	//implementation("org.postgresql:postgresql:42.5.0")
+
 
 	runtimeOnly("mysql:mysql-connector-java")
-	runtimeOnly("org.postgresql:postgresql")
+	//runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
