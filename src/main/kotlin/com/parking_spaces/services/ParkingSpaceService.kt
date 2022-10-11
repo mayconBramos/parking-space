@@ -4,6 +4,7 @@ import com.parking_spaces.models.ParkingSpaceModel
 import com.parking_spaces.repositories.ParkingSpaceRepository
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.DeleteMapping
+import java.lang.Exception
 
 
 @Service
@@ -29,6 +30,14 @@ class ParkingSpaceService (
     fun delete(parkingSpaceModel: ParkingSpaceModel){
 
          parkingSpaceRepository.delete(parkingSpaceModel)
+    }
+
+    fun update(parkingSpaceModel: ParkingSpaceModel) {
+        if(!parkingSpaceRepository.existsById(parkingSpaceModel.id!!)){
+            throw Exception()
+        }
+
+        parkingSpaceRepository.save(parkingSpaceModel)
     }
 
 }
